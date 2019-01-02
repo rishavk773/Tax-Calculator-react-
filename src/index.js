@@ -1,3 +1,6 @@
+//install following := npm install create-react-class --save-dev
+//then run it with:= npm start
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -24,8 +27,8 @@ var calculatePayment = function(principal,years,rate){
 
 
 
-
-var Header = React.createClass({
+var createReactClass = require('create-react-class');
+var Header = createReactClass({
     render: function () {
         return(
             <header>
@@ -36,11 +39,10 @@ var Header = React.createClass({
 });
 
 
-
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
-var MortagageCalculator = React.createClass({
+var MortagageCalculator = createReactClass({
     getInitialState: function(){
         return{
             principal: this.props.principal,
@@ -86,7 +88,7 @@ var MortagageCalculator = React.createClass({
 
 
 
-var App = React.createClass({
+var App = createReactClass({
     render:function(){
         return(
             <div>
@@ -99,5 +101,6 @@ var App = React.createClass({
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
+
 
 
